@@ -12,18 +12,18 @@ namespace _16_interfaces.Models
 
     public interface IPearl
     {
-        public int Size { get; init; }
-        public PearlColor Color { get; init; }
-        public PearlShape Shape { get; init; }
-        public PearlType Type { get; init; }
+        public int Size { get; set; }
+        public PearlColor Color { get; set; }
+        public PearlShape Shape { get; set; }
+        public PearlType Type { get; set; }
     }
 
     public interface INecklace
     {
-        public List<IPearl> ListOfPearls { get; set; }
+        public List<IPearl> ListOfPearls { get;}
         public string Name { get; set; }
-        public IPearl LargestPearl { get; set; }
-        public IPearl SmallestPearl { get; set; }
+        public IPearl LargestPearl { get; }
+        public IPearl SmallestPearl { get; }
 
     }
 }

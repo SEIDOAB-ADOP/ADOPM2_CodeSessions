@@ -12,7 +12,7 @@ namespace _16_interfaces.Models
 
     public interface IPearl
     {
-        public int Size { get; set; }
+        public int Size { get; init; }
         public PearlColor Color { get; init; }
         public PearlShape Shape { get; init; }
         public PearlType Type { get; init; }
@@ -22,5 +22,8 @@ namespace _16_interfaces.Models
     {
         public List<IPearl> ListOfPearls { get; set; }
         public string Name { get; set; }
+        public IPearl LargestPearl { get; set; }
+        public IPearl SmallestPearl { get; set; }
+
     }
 }

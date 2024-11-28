@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components.Web.Virtualization;
+using System;
 namespace _09_inheritance2
 {
 	public class Animal
 	{
 		public virtual string Noise() => "Clonk";
         public virtual string Name { get; }
-        public int Age = 0;
+        public int Age { get; set; } = 0;
 
         public Animal()
         {
@@ -16,13 +17,13 @@ namespace _09_inheritance2
 	{
         public override string Noise() => "Voff";
         public override string Name { get; }
-        public new int Age = 17;
 
         private string _hate = "Cats";
-        public string IHate() => $"I hate {_hate}";
+        public string Hate() => $"I hate {_hate}";
         public Dog():base()
         {
             Name = "Cooper the Dog";
+            Age = 17;
         }
         public Dog(string hatedAnimal)
         {
@@ -30,6 +31,7 @@ namespace _09_inheritance2
         }
 
     }
+    
     public class Cat : Animal
     {
         public override string Noise() => "Meow";
@@ -37,8 +39,10 @@ namespace _09_inheritance2
         public Cat()
         {
             Name = "Scobby the Cat";
+            Age = 5;
         }
     }
+    /*
     public class Labrador : Dog
     {
         public override string Noise() => "Voff Voff Rauw!";
@@ -54,5 +58,6 @@ namespace _09_inheritance2
             Name = "Aladin the Labrador";
         }
     }
+    */
 }
 

@@ -15,6 +15,9 @@ public class PearlAsClass
 
     public override string ToString() => $"{Size}mm {Color} {Shape} {Type} pearl.";
 
+    public PearlAsClass SetColor(PearlColor color) => 
+        new PearlAsClass(){ Color = color, Shape = this.Shape, Type = this.Type, Size = this.Size };
+
     public PearlAsClass() { }
     public PearlAsClass(SeedGenerator _seeder)
     {
@@ -52,6 +55,7 @@ public record PearlAsRecord (int Size, PearlColor Color, PearlShape Shape, Pearl
 }
 
 
+
 class Program
 {
     static void Main(string[] args)
@@ -59,19 +63,20 @@ class Program
         Console.WriteLine("04_record_vs_clas");
 
         var rnd = new SeedGenerator();
-        var p = new PearlAsClass(rnd);
+        var p = new PearlAsClass(rnd){Color = PearlColor.White};
 
+        var p2 = p.SetColor(PearlColor.Pink);
         Console.WriteLine(p);
+        Console.WriteLine(p2);
 
         var pc = new PearlAsClass(p) { Size = 5 };
-
         Console.WriteLine(pc);
 
         Console.WriteLine("\n\n");
         var pr = new PearlAsRecord(25,PearlColor.White, PearlShape.DropShaped, PearlType.FreshWater);
-        Console.WriteLine(pr);
+        var pr_c = pr with { Color = PearlColor.Pink };
 
-        var pr_c = pr with { Size = 5 };
+        Console.WriteLine(pr);
         Console.WriteLine(pr_c);
 
         var rnd_p = new PearlAsRecord(rnd);

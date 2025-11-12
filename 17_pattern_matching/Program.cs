@@ -5,20 +5,21 @@ using Seido.Utilities.SeedGenerator;
 
 var rnd = new SeedGenerator();
 
-var p1 = new PearlAsClass().Seed(rnd);
-var p2 = new PearlAsStruct().Seed(rnd);
-var p3 = new PearlAsRecord().Seed(rnd);
+IPearl p1 = new PearlAsClass().Seed(rnd);
+IPearl p2 = new PearlAsStruct().Seed(rnd);
+IPearl p3 = new PearlAsRecord().Seed(rnd);
 
 //Pattern matching using if - is
-if (p1 is PearlAsClass)
+if (p1 is PearlAsClass pac)
 {
+    pac.Price = 1000;
     System.Console.WriteLine("Implemented as a class");
 }
 
 //Pattern matching using switch
 var message = p1 switch
 {
-    PearlAsClass => "Implemented as a class",
+    PearlAsClass pac1 => $"Implemented as a class, price: {pac1.Price}",
     PearlAsStruct => "Implemented as a struct",
     PearlAsRecord => "Implemented as a record",
     

@@ -9,6 +9,9 @@ public class PearlAsClass : IPearl
     public PearlShape Shape { get; init; }
     public PearlType Type { get; init; }
 
+    public decimal Price { get; set; }
+
+
     public override string ToString() => $"{GetType().Name}: {Size}mm {Color} {Shape} {Type} pearl.";
 
     public IPearl Seed(SeedGenerator _seeder)

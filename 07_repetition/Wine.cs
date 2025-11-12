@@ -24,7 +24,7 @@ namespace _08_inheritance
         }
 
         public Wine() { }
-        public Wine(csSeedGenerator _seeder)
+        public Wine(SeedGenerator _seeder)
         {
             string[] _names = "Chattaux de bueff, Chattaux de paraply, PutiPuti".Split(", ");
             Name = _names[_seeder.Next(0, _names.Length)];

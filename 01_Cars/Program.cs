@@ -28,7 +28,7 @@ class Program
         Console.WriteLine("Class exploration with Cars!");
 
         #region how To use the seed generator
-        var rnd = new csSeedGenerator();
+        var rnd = new SeedGenerator();
 
         //A random enCarColor
         Console.WriteLine(rnd.FromEnum<CarColor>());

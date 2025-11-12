@@ -61,6 +61,7 @@ public class WineAsClass : IEquatable<WineAsClass>
 
     public decimal Price { get; set; }
 
+    
     #region Implementing IEquatable 
     public bool Equals(WineAsClass other) => (Name, Country, GrapeType, WineType) ==
             (other.Name, other.Country, other.GrapeType, other.WineType);
@@ -127,6 +128,7 @@ class Program
 
         Console.WriteLine($"class Equals: {cs_w1.Equals(cs_w2)}");
         Console.WriteLine($"class Equals: {cs_w1 == cs_w2}");
+        System.Console.WriteLine(cs_w1);
 
         Object o1 = cs_w1;
         Object o2 = cs_w2;
@@ -135,8 +137,9 @@ class Program
         Console.WriteLine("\n");
         var cs_w3 = cs_w1;
         Console.WriteLine($"class Equals: {cs_w1.Equals(cs_w3)}");
-        Console.WriteLine($"class Equals: {cs_w1 == cs_w3}");
+        //Console.WriteLine($"class Equals: {cs_w1 == cs_w3}");
 
+/*
         Console.WriteLine($"wine csw1: {cs_w1}");
         Console.WriteLine($"wine csw3: {cs_w3}");
         if (cs_w1 == cs_w3)
@@ -161,7 +164,7 @@ class Program
         {
             Console.WriteLine("Both wines are NOT equal");
         }
-        
+        */
 
     }
 }
